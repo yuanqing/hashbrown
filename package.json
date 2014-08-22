@@ -1,0 +1,25 @@
+{
+  "name": "hashbrown",
+  "version": "0.0.1",
+  "description": "Extract embedded tags from Markdown.",
+  "author": "Lim Yuan Qing",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yuanqing/hashbrown.git"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.1",
+    "gulp": "^3.8.0",
+    "gulp-istanbul": "^0.2.1",
+    "gulp-jasmine": "^0.3.0",
+    "gulp-jshint": "^1.8.2",
+    "gulp-plumber": "^0.6.4",
+    "gulp-rimraf": "^0.1.0",
+    "jshint-stylish": "^0.4.0",
+    "matcha": "^0.5.0"
+  },
+  "dependencies": {
+    "marked": "^0.3.2"
+  }
+}
