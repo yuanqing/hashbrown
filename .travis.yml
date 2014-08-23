@@ -6,7 +6,8 @@ node_js:
 
 script:
   - npm run-script lint
-  - npm run-script coverage
+  - npm run-script lint-test
+  - npm run-script cover
 
 after_success:
   - npm i coveralls

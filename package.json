@@ -1,7 +1,7 @@
 {
   "name": "hashbrown",
-  "version": "0.0.2",
-  "description": "Extract tags inlined within a Markdown string.",
+  "version": "0.0.3",
+  "description": "Extract tags inlined in running text.",
   "author": "Lim Yuan Qing",
   "license": "MIT",
   "repository": {
@@ -18,8 +18,14 @@
     "marked": "^0.3.2"
   },
   "scripts": {
-    "test": "node_modules/.bin/jasmine-node spec --verbose",
-    "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/jasmine-node spec",
-    "lint": "node_modules/.bin/jshint --verbose --reporter node_modules/jshint-stylish/stylish.js ./index.js"
-  }
+    "cover": "node_modules/.bin/istanbul cover node_modules/.bin/jasmine-node ./spec -x **/spec/**",
+    "lint": "node_modules/.bin/jshint --verbose --reporter node_modules/jshint-stylish/stylish.js index.js",
+    "lint-test": "node_modules/.bin/jshint --verbose --reporter node_modules/jshint-stylish/stylish.js ./spec/*.js",
+    "test": "node_modules/.bin/jasmine-node spec --verbose"
+  },
+  "keywords": [
+    "markdown",
+    "taxonomy",
+    "text"
+  ]
 }

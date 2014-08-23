@@ -1,6 +1,6 @@
 # Hashbrown.js [![npm Version](http://img.shields.io/npm/v/hashbrown.svg?style=flat)](https://www.npmjs.org/package/hashbrown) [![Build Status](https://img.shields.io/travis/yuanqing/hashbrown.svg?style=flat)](https://travis-ci.org/yuanqing/hashbrown) [![Coverage Status](https://img.shields.io/coveralls/yuanqing/hashbrown.svg?style=flat)](https://coveralls.io/r/yuanqing/hashbrown)
 
-> Extract tags inlined within a Markdown string.
+> Extract tags inlined in running text.
 
 ## Usage
 
