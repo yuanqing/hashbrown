@@ -1,7 +1,7 @@
 {
   "name": "hashbrown",
-  "version": "0.0.1",
-  "description": "Extract embedded tags from Markdown.",
+  "version": "0.0.2",
+  "description": "Extract tags inlined within a Markdown string.",
   "author": "Lim Yuan Qing",
   "license": "MIT",
   "repository": {
@@ -10,16 +10,17 @@
   },
   "devDependencies": {
     "coveralls": "^2.11.1",
-    "gulp": "^3.8.0",
-    "gulp-istanbul": "^0.2.1",
-    "gulp-jasmine": "^0.3.0",
-    "gulp-jshint": "^1.8.2",
-    "gulp-plumber": "^0.6.4",
-    "gulp-rimraf": "^0.1.0",
-    "jshint-stylish": "^0.4.0",
-    "matcha": "^0.5.0"
+    "istanbul": "^0.3.0",
+    "jasmine-node": "^1.14.5",
+    "jshint": "^2.5.4",
+    "jshint-stylish": "^0.4.0"
   },
   "dependencies": {
     "marked": "^0.3.2"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/jasmine-node spec --verbose",
+    "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/jasmine-node spec",
+    "lint": "node_modules/.bin/jshint --verbose --reporter node_modules/jshint-stylish/stylish.js ./index.js"
   }
 }

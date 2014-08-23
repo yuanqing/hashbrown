@@ -2,11 +2,14 @@
 
 var marked = require('marked');
 
-var dasherise = function(str) {
+var kebabCase = function(str) {
 
-  return str.toLowerCase()
-            .replace(/[^\w\s-]/g, '') // remove any non-alphanumeric, whitespace, '_', or '-'
-            .replace(/[\s_]+/g, '-'); // replace whitespace and '_' with '-'
+  return str.trim()
+            .toLowerCase()
+            .replace(/[^\w\s-]/g, '')
+            // remove chars that are not alphanumeric, whitespace, '_', or '-'
+            .replace(/[\s_]+/g, '-');
+            // replace consecutive whitespace or '_' with a single '-'
 
 };
 
@@ -16,8 +19,8 @@ var hashbrown = function(str) {
 
   return {
     text: marked(str.replace(/\#\((.+?)\)/g, function (match, tag) {
-      tags.push(dasherise(tag));
-      return tag;
+      tags.push(kebabCase(tag));
+      return tag.trim();
     })),
     tags: tags
   };

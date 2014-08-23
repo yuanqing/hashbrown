@@ -3,13 +3,23 @@
 
 var hashbrown = require('..');
 
-describe('hashbrown', function() {
+describe('hashbrown(str)', function() {
 
-  it('should work', function() {
-    var str = 'The quick brown #(fox) jumps over the #(lazy dog)!';
-    expect(hashbrown(str)).toEqual({
-      text: '<p>The quick brown fox jumps over the lazy dog!</p>\n',
-      tags: ['fox', 'lazy-dog']
+  it('extract tags from the given `str`', function() {
+    expect(hashbrown('#( Lorem ipsum! ) Dolor #( sit ) amet!')).toEqual({
+      text: '<p>Lorem ipsum! Dolor sit amet!</p>\n',
+      tags: ['lorem-ipsum', 'sit']
+    });
+    expect(hashbrown('#(foo)')).toEqual({
+      text: '<p>foo</p>\n',
+      tags: ['foo']
+    });
+  });
+
+  it('doesn\'t fail when the given `str` has no tags', function() {
+    expect(hashbrown('foo')).toEqual({
+      text: '<p>foo</p>\n',
+      tags: []
     });
   });
 
