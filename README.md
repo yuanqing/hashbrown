@@ -4,7 +4,7 @@
 
 ## Usage
 
-Hashbrown is an experiment in embedding meta data within running text. It is similar to the concept of the [hashtag](https://support.twitter.com/articles/49309-using-hashtags-on-twitter), only that **the post-processed text is syntactically correct**. This is because the `#(` and `)` markup used to demarcate a tag is removed from the text.
+Hashbrown is a means of embedding meta data within running text. It is similar to the concept of the [hashtag](https://support.twitter.com/articles/49309-using-hashtags-on-twitter), only that **the post-processed text is syntactically correct**. This is because the `#(` and `)` markup used to demarcate a tag is removed from the text.
 
 ```js
 var str = '#( Lorem ipsum! ) Dolor #( sit ) amet!';
@@ -12,7 +12,7 @@ var str = '#( Lorem ipsum! ) Dolor #( sit ) amet!';
 hashbrown(str);
 /* =>
  * {
- *   text: '<p>Lorem ipsum! Dolor sit amet!</p>\n',
+ *   text: 'Lorem ipsum! Dolor sit amet!',
  *   tags: ['lorem-ipsum', 'sit']
  * }
  */
@@ -27,7 +27,7 @@ A tag is converted to [kebab-case](http://stackoverflow.com/a/12273101/348359) a
 
 ### hashbrown(str)
 
-Parses the given Markdown-formatted `str`, and returns an object containing the processed `text`, and an array of `tags`.
+Parses the given `str`, and returns an object containing `text` (which is the `str` stripped of the `#(` and `)` markup), and an array of `tags`.
 
 ## Installation
 
