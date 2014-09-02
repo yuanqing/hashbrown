@@ -1,7 +1,5 @@
 'use strict';
 
-var marked = require('marked');
-
 var kebabCase = function(str) {
 
   return str.trim()
@@ -18,10 +16,10 @@ var hashbrown = function(str) {
   var tags = [];
 
   return {
-    text: marked(str.replace(/\#\((.+?)\)/g, function (match, tag) {
+    text: str.replace(/\#\((.+?)\)/g, function (match, tag) {
       tags.push(kebabCase(tag));
       return tag.trim();
-    })),
+    }),
     tags: tags
   };
 
