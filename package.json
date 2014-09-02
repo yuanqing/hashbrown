@@ -1,6 +1,6 @@
 {
   "name": "hashbrown",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Extract tags inlined in running text.",
   "author": "Lim Yuan Qing",
   "license": "MIT",
